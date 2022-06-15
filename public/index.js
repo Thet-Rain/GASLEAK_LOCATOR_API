@@ -34,7 +34,7 @@
         });
 
     //gas leak icon marker 
-    const gasLeak = "firedept.png"; 
+    const gasLeak = "warning.png"; 
 
     const icon = {
         url: gasLeak, // url
