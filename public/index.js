@@ -34,7 +34,7 @@
         });
 
     //gas leak icon marker 
-    const gasLeak = "http://maps.google.com/mapfiles/kml/shapes/firedept.png"; 
+    const gasLeak = "firedept.png"; 
 
     const icon = {
         url: gasLeak, // url
