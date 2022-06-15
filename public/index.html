@@ -49,92 +49,32 @@
     </div>
     
     
-<form class="container">
+<form id="gasLeak-form" class="container">
+  
   <div class="form-row">
     <div id="map" class="group col-md-12"></div>
   </div>
-  <div class="form-row">
-    <div class="group col-md-6">
-    <label for="inputAddress">Your Name</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="Jane Doe">
-  </div>
-  <div class="form-group col-md-6">
-      <label for="inputDate">Address Of Gas Leak</label>
-      <input type="text" class="form-control" id="inputDate" placeholder="199 Chambers St, New York, NY 10007">
-    </div>
-</div>
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <label for="inputCity">Some Description on how you detected the gas leak</label>
-      <input type="text" class="form-control" id="inputCity" placeholder="I smelled rotten egg like odor">
-    </div>
   
+  <div class="form-group">
+    <label for="gasLeak-reporter">Witness Name</label>
+    <input type="text" id="gasLeak-reporter" class="form-control">
   </div>
   <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
+    <label for="gasLeak-address">Gas Leak Address</label>
+    <input type="text" id="gasLeak-address" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="gasLeak-description">Description</label>
+    <input type="text" id="gasLeak-description" class="form-control">
   </div>
 
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Report Gas Leak
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Report Gas Leak?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Press Confirm to Confirm the report of gas leak
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Deny</button>
-        
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
-  		Confirm
-		</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Confirm Report</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Congratulations, the gas leak has been successfully reported!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYrZmehs4hbg8D3f0Qn9XT1Wpox7zt85Y&callback=initMap"
     async defer></script>
 <script src="index.js"></script>
+<script src="add.js"></script>
 </body>
 </html>
