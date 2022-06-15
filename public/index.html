@@ -1,9 +1,13 @@
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script src="https://kit.fontawesome.com/7514a190de.js" crossorigin="anonymous"></script>
 
 <script>
   navigator.geolocation.getCurrentPosition(function (position) {
@@ -13,11 +17,7 @@
     document.getElementById('gasLeak-address').value = position.coords.latitude + " " + position.coords.longitude;
   }
 })
-
 </script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,40 +25,41 @@
 
    <title>Smell Gas, Act Fast</title>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="https://www.bmcc.cuny.edu/">BMCC</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Forum</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+  
 </head>
 <body>
 
-
-<div class='dynamic-title'>
-        <span>Smell</span>
-        <span>Gas</span>
-        <span>,</span>
-        <span>Act</span>
-        <span>Fast</span>
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://www.bmcc.cuny.edu/">BMCC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Forum</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
+  </nav>  -->
+
+<!-- <div class='dynamic-title'>
+        <span>Smell Gas</span> 
+        <span>Act Fast</span>
+    </div> -->
     
-    
+<div class="container my-3 blink_me">
+  <h1 class="display-4 text-center">
+    <i class="fa-solid fa-triangle-exclamation"></i> Smell Gas , Act Fast</h1>
+</div>
 <form id="gasLeak-form" class="container">
   
   <div class="form-row">
@@ -70,7 +71,7 @@
     <input type="text" id="gasLeak-reporter" class="form-control">
   </div>
   <div class="form-group">
-    <label for="gasLeak-address">Gas Leak Address</label>
+    <label for="gasLeak-address">Gas Leak Address (Enabling location will automatically fill this text box for you.)</label>
     <input type="text" id="gasLeak-address" class="form-control" value="">
   </div>
   <div class="form-group">
@@ -78,10 +79,10 @@
     <input type="text" id="gasLeak-description" class="form-control">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+  
 </form>
-
+<br>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYrZmehs4hbg8D3f0Qn9XT1Wpox7zt85Y&callback=initMap"
     async defer></script>
 <script src="index.js"></script>

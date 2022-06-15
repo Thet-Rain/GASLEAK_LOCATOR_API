@@ -1,5 +1,6 @@
 body {
-            background-color: whitle;
+            background-color: gray;
+            
         }
         .dynamic-title {
             text-align:center;
@@ -58,4 +59,24 @@ body {
     /* The height is 400 pixels */
     margin: auto;
     /* The width is the width of the web page */
+  }
+  .form-group
+  {
+    color: white;
+    font-weight: bold;
+  }
+  .blink_me {
+    animation: blinker 1s linear infinite;
+    color: red;
+  }
+
+  .btn
+  {
+    margin: auto;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }
