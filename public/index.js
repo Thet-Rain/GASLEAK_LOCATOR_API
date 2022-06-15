@@ -1,12 +1,24 @@
 
       var map;
-      function initMap() {
+      var myStyles =[
+        {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [
+                  { visibility: "off" }
+            ]
+        }
+    ];
+    function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7454486, lng: -73.8951494},
           zoom: 12,
+          styles: myStyles,
           mapTypeControlOptions: {
-      mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID]
-    }, // here´s the array of controls
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
+    }, 
+    
+    // here´s the array of controls
     disableDefaultUI: true, // a way to quickly hide all controls
     mapTypeControl: false,
     scaleControl: true,
@@ -14,11 +26,19 @@
     zoomControlOptions: {
       style: google.maps.ZoomControlStyle.LARGE 
     },
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
     //gas leak icon marker 
     const gasLeak = "http://maps.google.com/mapfiles/kml/shapes/firedept.png"; 
+
+    const icon = {
+        url: gasLeak, // url
+        scaledSize: new google.maps.Size(35, 35), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0), // anchor
+        labelOrigin: new google.maps.Point(75, 40)
+    };
 
     const features = [
         {
@@ -61,14 +81,16 @@
 
     const marker = new google.maps.Marker({
           position: features[i].position,
-          icon: gasLeak,
+          icon: icon,
           map: map,
+          label: "Reported By Jane Doe",
+          disableDefaultUI: true,
         });
     marker.addListener("click", () => {
             infowindow.open({
               anchor: marker,
               map,
-              shouldFocus: false,
+              shouldFocus: true,
             });
           });
 
