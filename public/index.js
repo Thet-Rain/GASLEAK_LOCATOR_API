@@ -1,5 +1,6 @@
 
       var map;
+      var features;
       var myStyles =[
         {
             featureType: "poi",
@@ -9,6 +10,8 @@
             ]
         }
     ];
+
+
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7454486, lng: -73.8951494},
@@ -16,6 +19,7 @@
           styles: myStyles,
           mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
+    
     }, 
     
     // here´s the array of controls
@@ -40,27 +44,38 @@
         labelOrigin: new google.maps.Point(75, 40)
     };
 
-    const features = [
-        {
-          position: new google.maps.LatLng(40.7166057, -74.01129)
-        },
-        {
-          position: new google.maps.LatLng(40.7438819, -73.8915876)
+    var data;
+    var features;
+    var dataLength;
+    async function getStores(){
+        const res = await fetch('/api/v1/stores');
+        data = await res.json();
+        dataLength = data.data.length;
+        console.log(data.data);
+        features = [
+                 
+                {position: new google.maps.LatLng(data.data[0].location.coordinates[1],data.data[0].location.coordinates[0])
         }
-    ] 
+        ]
+
+        //LoopThrough data to add to feature object array
+        for (var i = 1 ; i < dataLength; i++)
+    {
+        features.push({position: new google.maps.LatLng(data.data[i].location.coordinates[1] , data.data[i].location.coordinates[0]) });
+    }
+
 
     //Gas leaker Marker info window
     
-
     for (let i = 0; i < features.length; i++) {
-         //Info Window when gasleak marker is clicked
+    //Info Window when gasleak marker is clicked
      const contentString =
      '<div id="content">' +
      '<div id="siteNotice">' +
      "</div>" +
-     '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+     '<h1 id="firstHeading" class="firstHeading">Gas Leak Report</h1>' +
      '<div id="bodyContent">' +
-     "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
+     "<p><b>GasLeak Report Description</b>, also referred to as <b>Ayers Rock</b>, is a large " +
      "sandstone rock formation in the southern part of the " +
      "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
      "south west of the nearest large town, Alice Springs; 450&#160;km " +
@@ -83,7 +98,11 @@
           position: features[i].position,
           icon: icon,
           map: map,
-          label: "Reported By Jane Doe",
+          label: {
+            text: "Reported By Jane Doe",
+            color: "#F00",
+            textWeight: "bold"
+          },
           disableDefaultUI: true,
         });
     marker.addListener("click", () => {
@@ -95,6 +114,12 @@
           });
 
       }
+
+    }
+    
+    getStores();
+
+
         
    
     }

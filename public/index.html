@@ -47,11 +47,12 @@
         <span>Act</span>
         <span>Fast</span>
     </div>
-    <div id="map"></div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYrZmehs4hbg8D3f0Qn9XT1Wpox7zt85Y&callback=initMap"
-    async defer></script>
+    
+    
 <form class="container">
+  <div class="form-row">
+    <div id="map" class="group col-md-12"></div>
+  </div>
   <div class="form-row">
     <div class="group col-md-6">
     <label for="inputAddress">Your Name</label>
@@ -132,7 +133,8 @@
 
 </form>
 
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYrZmehs4hbg8D3f0Qn9XT1Wpox7zt85Y&callback=initMap"
+    async defer></script>
 <script src="index.js"></script>
 </body>
 </html>
