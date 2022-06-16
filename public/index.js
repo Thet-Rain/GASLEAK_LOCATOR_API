@@ -92,7 +92,7 @@
           map: map,
           label: {
             text: "Reported By " + data.data[i].witnessName,
-            color: "#F00",
+            color: "blue",
             textWeight: "bold"
           },
           disableDefaultUI: true,
