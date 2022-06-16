@@ -1,5 +1,5 @@
 body {
-            background-color: gray;
+            background-color: black;
             
         }
         .dynamic-title {
@@ -66,14 +66,16 @@ body {
     font-weight: bold;
   }
   .blink_me {
-    animation: blinker 1s linear infinite;
-    color: red;
+    animation: blinker 2s linear infinite;
+    color: rgb(0, 120, 207);
   }
 
   .btn
   {
     margin: auto;
   }
+  
+
   
   @keyframes blinker {
     50% {
